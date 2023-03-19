@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "./user";
+
+message FileIsUserReq{
+  string UserId = 1;
+  int64 FID = 2;
+}
+
+message FileIsUserReply{
+  bool IsUser = 1;
+}
+
+service user {
+  rpc FileIsUser(FileIsUserReq) returns(FileIsUserReply);
+}
